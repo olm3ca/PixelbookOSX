@@ -16,7 +16,7 @@ For OS X purposes, what matters most in the [specs for the Pixelbook](https://su
 
 Here's what's working at the moment:
 
-| Feature            |                      | Notes                                                             |
+| Feature            | Status               | Notes                                                             |
 |--------------------|----------------------|-------------------------------------------------------------------|
 | WiFi               | Working              | Working                                                           |
 | Bluetooth          | Working              | Working                                                           |
