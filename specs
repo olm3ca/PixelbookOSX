@@ -1,0 +1,48 @@
+[code]
+System:    Kernel: 5.4.0-26-generic x86_64 bits: 64 compiler: gcc v: 9.3.0 Desktop: Cinnamon 4.6.6 
+           wm: muffin dm: LightDM Distro: Linux Mint 20 Ulyana base: Ubuntu 20.04 focal 
+Machine:   Type: Convertible System: Google product: Eve v: 1.0 serial: <filter> Chassis: type: 31 
+           serial: <filter> 
+           Mobo: Google model: Eve v: 1.0 serial: <filter> UEFI: coreboot v: MrChromebox-4.13 
+           date: 12/19/2020 
+Battery:   Device-1: hid-0018:2D1F:5143.0001-battery model: WCOM50C1:00 2D1F:5143 serial: N/A 
+           charge: N/A status: N/A 
+CPU:       Topology: Dual Core model: Intel Core i5-7Y57 bits: 64 type: MT MCP arch: Amber Lake 
+           rev: 9 L2 cache: 4096 KiB 
+           flags: avx avx2 lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 12799 
+           Speed: 2400 MHz min/max: 400/3300 MHz Core speeds (MHz): 1: 2400 2: 2400 3: 2400 
+           4: 2400 
+Graphics:  Device-1: Intel HD Graphics 615 vendor: Google driver: i915 v: kernel bus ID: 00:02.0 
+           chip ID: 8086:591e 
+           Display: x11 server: X.Org 1.20.8 driver: modesetting unloaded: fbdev,vesa 
+           resolution: 2400x1600~60Hz 
+           OpenGL: renderer: Mesa Intel HD Graphics 615 (KBL GT2) v: 4.6 Mesa 20.0.4 
+           direct render: Yes 
+Audio:     Device-1: Intel Sunrise Point-LP HD Audio driver: N/A bus ID: 00:1f.3 
+           chip ID: 8086:9d71 
+           Sound Server: ALSA v: k5.4.0-26-generic 
+Network:   Device-1: Intel Wireless 7265 driver: iwlwifi v: kernel port: efa0 bus ID: 01:00.0 
+           chip ID: 8086:095a 
+           IF: wlp1s0 state: up mac: <filter> 
+Drives:    Local Storage: total: 116.48 GiB used: 8.51 GiB (7.3%) 
+           ID-1: /dev/mmcblk0 model: DURM4R size: 116.48 GiB serial: <filter> 
+Partition: ID-1: / size: 113.66 GiB used: 8.50 GiB (7.5%) fs: ext4 dev: /dev/mmcblk0p2 
+USB:       Hub: 1-0:1 info: Full speed (or root) Hub ports: 12 rev: 2.0 chip ID: 1d6b:0002 
+           Device-1: 1-2:2 info: Realtek WebCamera type: Video driver: uvcvideo rev: 2.0 
+           chip ID: 0bda:564b 
+           Device-2: 1-3:3 info: Intel type: Bluetooth driver: btusb rev: 2.0 chip ID: 8087:0a2a 
+           Hub: 2-0:1 info: Full speed (or root) Hub ports: 6 rev: 3.0 chip ID: 1d6b:0003 
+Sensors:   System Temperatures: cpu: 62.0 C mobo: N/A 
+           Fan Speeds (RPM): N/A 
+Repos:     No active apt repos in: /etc/apt/sources.list 
+           Active apt repos in: /etc/apt/sources.list.d/official-package-repositories.list 
+           1: deb http: //packages.linuxmint.com ulyana main upstream import backport #id:linuxmint_main
+           2: deb http: //archive.ubuntu.com/ubuntu focal main restricted universe multiverse
+           3: deb http: //archive.ubuntu.com/ubuntu focal-updates main restricted universe multiverse
+           4: deb http: //archive.ubuntu.com/ubuntu focal-backports main restricted universe multiverse
+           5: deb http: //security.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
+           6: deb http: //archive.canonical.com/ubuntu/ focal partner
+Info:      Processes: 204 Uptime: 42m Memory: 7.67 GiB used: 1.36 GiB (17.7%) Init: systemd v: 245 
+           runlevel: 5 Compilers: gcc: 8.4.0 alt: 8/9 Client: Unknown python3.8 client 
+           inxi: 3.0.38 
+[/code]
