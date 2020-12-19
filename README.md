@@ -10,7 +10,7 @@ For OS X purposes, what matters most in the [specs for the Pixelbook](https://su
 -  keyboard - PS/2
 -  touchpad: HID-over-I²C
 -  Suspend: ACPI S3 sleep
--  Audio: probably not going to work. The speakers, mic and headphone jack are all connected to various codecs exposed via I²C. [yusefnapora explains in detail](https://github.com/yusefnapora/pixelbook-linux/blob/master/README.md#switching-audio-outputs--inputs) how complicated audio was in Ubuntu... But who knows, maybe we can figure it out.
+-  Audio: Audio Codec: Intel Sunrise Point-LP HD Audio. The speakers, mic and headphone jack are all connected to various codecs exposed via I²C. [yusefnapora explains in detail](https://github.com/yusefnapora/pixelbook-linux/blob/master/README.md#switching-audio-outputs--inputs) how complicated audio was in Ubuntu... But who knows, maybe we can figure it out.
 
 ## Current Status
 
