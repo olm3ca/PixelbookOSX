@@ -63,6 +63,7 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.15.7 Catalina insta
 5. Test your config.plist for errors: https://opencore.slowgeek.com/
 
 6. Boot the MacOS installer. Important: if you are using an external drive, you must format it as APFS or the installer won't be able to install.
+    - If it freezes with 2 or 3 mins remaining, shut down and start up, but instead of selecting the install media, continue the installation from the target disk.
 
 7. 
 
