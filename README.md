@@ -57,10 +57,8 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.15.7 Catalina insta
     - [GenSMBIOS-master](https://github.com/corpnewt/GenSMBIOS) will help you generate a serial number etc.
 4. Edit your config.plist with the following customizations:
     - SetupVirtualMap = No , rather than YES, as per OpenCore guide
-    - Under DeviceProperties:
-     - AAPL,ig-platform-id    Data   01001E59
-     - AppleCpuPmCfgLock: True
-     - AppleXcpmCfgLock: True
+    - Under DeviceProperties: AAPL,ig-platform-id    Data   01001E59 OR 16590000 (this is just for the initial install with no graphics acceleration). 
+     - Under Kernel -> Quirks: AppleCpuPmCfgLock: True and AppleXcpmCfgLock: True
     
 5. Test your config.plist for errors: https://opencore.slowgeek.com/
 
