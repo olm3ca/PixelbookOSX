@@ -59,11 +59,14 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.15.7 Catalina insta
     - SetupVirtualMap = No , rather than YES, as per OpenCore guide
     - Under DeviceProperties:
      - AAPL,ig-platform-id    Data   01001E59
-     - 
+     - AppleCpuPmCfgLock: True
+     - AppleXcpmCfgLock: True
     
 5. Test your config.plist for errors: https://opencore.slowgeek.com/
 
+6. Boot the MacOS installer. Important: if you are using an external drive, you must format it as APFS or the installer won't be able to install.
 
+7. 
 
 
 
