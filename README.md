@@ -23,7 +23,7 @@ Here's what's working at the moment:
 | Suspend            | Working              | Working                                                           |
 | Touchpad           | Not Working          | Working (tweaked to feel nice)                                    |
 | Graphics Accel.    | Not Working          | WIP. Has Intel HD615 and should be fully supported.               |
-| Sound              | Not Working          | Works via bluetooth for now.                                      |
+| Sound              | Not Working          | Works via bluetooth for now with VoodooHDA                        |
 | Keyboard backlight | Working (partially)  | 50% always on from latest MrChromebox firmware                    |
 | Touchscreen        | Working! :-)         | With VoodooI2C.kext and VoodooI2CHID.kext                         |
 | Mac OS 11 Big Sur  | Not working          | For intel wifi, currently itlwm and Big Sur are not working yet.  |
@@ -63,9 +63,11 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.15.7 Catalina insta
 5. Test your config.plist for errors: https://opencore.slowgeek.com/
 
 6. Boot the MacOS installer. Important: if you are using an external drive, you must format it as APFS or the installer won't be able to install.
-    - If it freezes with 2 or 3 mins remaining, shut down and start up, but instead of selecting the install media, continue the installation from the target disk.
+    - If the initial install screen freezes with 2 or 3 mins remaining, shut down and start up, but instead of selecting the install media, continue the installation from the target disk. It will then continue the installation and reboot.
 
-7. 
+7. After install: 
+    - Download and use [heliport](https://openintelwireless.github.io/HeliPort) to connect to Wifi.
+    - Test and report back!
 
 
 
