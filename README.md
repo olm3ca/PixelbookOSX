@@ -24,8 +24,8 @@ Here's what's working at the moment:
 | Touchpad           | Not Working          | Working (tweaked to feel nice)                                    |
 | Graphics Accel.    | Not Working          | WIP. Has Intel HD615 and should be fully supported.               |
 | Sound              | Not Working          | Works via bluetooth for now.                                      |
-| Keyboard backlight | Not Working          |                                                                   |
-| Touchscreen        | Not working          | Mac OS has no touchscreen implementation.                         |
+| Keyboard backlight | Working (partially)  | 50% always on from latest MrChromebox firmware                    |
+| Touchscreen        | Working! :-)         | With VoodooI2C.kext and VoodooI2CHID.kext                         |
 | Mac OS 11 Big Sur  | Not working          | For intel wifi, currently itlwm and Big Sur are not working yet.  |
 
 
