@@ -52,9 +52,7 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.15.7 Catalina insta
 1. Flash UEFI firmware. Read and follow [yusefnapora's excellent guide](https://github.com/yusefnapora/pixelbook-linux) on how to flash the UEFI firmware using MrChromebox's scripts. To do this, you will need to disable write protect with either the SuzyQable cable or by removing the battery. 
 2. Download and set up your Mac OS X Catalina USB drive. 
 3. Set up OpenCore on the EFI partition of the drive. [Read the OpenCore Install Guide.](https://dortania.github.io/) There are also plenty of video [tutorials](https://www.youtube.com/watch?v=jqg7MX3FS7M) on how to do this.
-    - Some helpful tips: [I found OC-Gen X to be helpful.](https://github.com/Pavo-IM/OC-Gen-X) 
-    - Make sure you have these Kexts: VoodooPS2Controller, itlwm, IntelBluetoothFirmware and IntelBluetoothInjector. 
-    - [GenSMBIOS-master](https://github.com/corpnewt/GenSMBIOS) will help you generate a serial number etc.
+    - EFI folder to use based on work completed so far is [here](https://www.dropbox.com/s/vml6tl25rvhuks1/efi4.zip?dl=0).
 4. Edit your config.plist with the following customizations:
     - SetupVirtualMap = No , rather than YES, as per OpenCore guide
     - Under DeviceProperties: AAPL,ig-platform-id    Data   01001E59 OR 16590000 (this is just for the initial install with no graphics acceleration). 
