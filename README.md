@@ -53,17 +53,31 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.15.7 Catalina insta
 2. Download and set up your Mac OS X Catalina USB drive. 
 3. Set up OpenCore on the EFI partition of the drive. [Read the OpenCore Install Guide.](https://dortania.github.io/) There are also plenty of video [tutorials](https://www.youtube.com/watch?v=jqg7MX3FS7M) on how to do this.
     - EFI folder to use based on work completed so far is [here](https://www.dropbox.com/s/vml6tl25rvhuks1/efi4.zip?dl=0).
-4. Edit your config.plist with the following customizations:
+4. KEXTS: the following are suggestions, you can experiment with your own and report back!
+    - For USB, follow Corpnewt's [USBMap](https://github.com/corpnewt/USBMap) procedure - this is instead of USBInjectAll, which is outdated.
+    - AppleALC
+    - IntelBluetoothFirmware
+    - IntelBluetoothInjector
+    - itlwm - for wifi to work
+    - Lilu
+    - SMCProcessor
+    - VirtualSMC
+    - VoodooI2C - touchscreen support
+    - VoodooI2CHID
+    - VoodooPS2Controller
+    - WhateverGreen
+
+5. Edit your config.plist with the following customizations:
     - SetupVirtualMap = No , rather than YES, as per OpenCore guide
     - Under DeviceProperties: AAPL,ig-platform-id    Data   01001E59 OR 16590000 (this is just for the initial install with no graphics acceleration). 
      - Under Kernel -> Quirks: AppleCpuPmCfgLock: True and AppleXcpmCfgLock: True
     
-5. Test your config.plist for errors: https://opencore.slowgeek.com/
+6. Test your config.plist for errors: https://opencore.slowgeek.com/
 
-6. Boot the MacOS installer. Important: if you are using an external drive, you must format it as APFS or the installer won't be able to install.
+7. Boot the MacOS installer. Important: if you are using an external drive, you must format it as APFS or the installer won't be able to install.
     - If the initial install screen freezes with 2 or 3 mins remaining, shut down and start up, but instead of selecting the install media, continue the installation from the target disk. It will then continue the installation and reboot.
 
-7. After install: 
+8. After install: 
     - Download and use [heliport](https://openintelwireless.github.io/HeliPort) to connect to Wifi.
     - Test and report back!
 
