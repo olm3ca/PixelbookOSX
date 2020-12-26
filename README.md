@@ -1,5 +1,5 @@
 # Installing Mac OS on the Google Pixelbook
-We've managed to install GNU/Linux, Windows and a lot of other hacks on this beautiful laptop... so why not OS X? 
+We've managed to install GNU/Linux, Windows and a lot of other hacks on this beautiful laptop... so why not Mac OS? 
 
 ## This is a work-in-progress guide.
 Not all of the functionality is working. This will be updated frequently as fixes are identified. At the moment this guide is focused on Mac OS 10.15.7 Catalina as it has the best support for our hardware, in particular the Intel wifi chip.
