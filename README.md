@@ -1,4 +1,4 @@
-# Installing OS X on the Google Pixelbook
+# Installing Mac OS on the Google Pixelbook
 We've managed to install GNU/Linux, Windows and a lot of other hacks on this beautiful laptop... so why not OS X? 
 
 ## This is a work-in-progress guide.
