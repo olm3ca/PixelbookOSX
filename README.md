@@ -20,13 +20,13 @@ Here's what's working at the moment:
 |--------------------|----------------------|-------------------------------------------------------------------|
 | WiFi               | Working              | Working                                                           |
 | Bluetooth          | Working              | Working                                                           |
-| Suspend            | Working              | Working                                                           |
+| Suspend            | Not working          | Haven't started                                                   |
 | Touchpad           | Not Working          |                                                                   |
-| Graphics Accel.    | Not Working          | WIP. Has Intel HD615 and should be fully supported.               |
-| Sound              | Not Working          | Partially working with blueetooth.                                |
+| Graphics Accel.    | Not Working          | WIP. Boots, only 8mb VRAM. Intel HD615 should be fully supported. |
+| Sound              | Not Working          | Partially working with bluetooth                                  |
 | Keyboard backlight | Working (partially)  | 50% always on from latest MrChromebox firmware                    |
 | Touchscreen        | Working! :-)         | With VoodooI2C.kext and VoodooI2CHID.kext                         |
-| Mac OS 11 Big Sur  | Not working          | For intel wifi, currently itlwm and Big Sur are not working yet.  |
+| Mac OS 11 Big Sur  | Not tested           | Reports are now that intel wifi / itlwm work... Haven't tested.   |
 
 
 ### Requirements
