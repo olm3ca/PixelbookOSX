@@ -2,7 +2,7 @@
 We've managed to install GNU/Linux, Windows and a lot of other hacks on this beautiful laptop... so why not Mac OS? 
 
 ## This is a work-in-progress guide.
-Not all of the functionality is working. This will be updated frequently as fixes are identified. At the moment this guide is focused on Mac OS 10.15.7 Catalina as it has the best support for our hardware, in particular the Intel wifi chip.
+Not all of the functionality is working. This will be updated frequently as fixes are identified. At the moment this guide is focused on Mac OS 10.15.7 Catalina as it has the best support for our hardware.
 
 ## A note on Pixelbook hardware
 For OS X purposes, what matters most in the [specs for the Pixelbook](https://support.google.com/pixelbook/answer/7504948?hl=en) is not so much about the i5-7Y57 or i7-7Y75 processor. The biggest difference for our purposes is the internal SSD. The 128GB and 256GB models have an EMMC SSD, and it is currently not working within OS X. The i7 with 512GB has an NVMe SSD, which is fully supported. So unless you have the 512GB hard drive, installing OS X to the internal drive is currently not possible. It does work on an external SSD, however. Other notable specs:
@@ -82,6 +82,9 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.15.7 Catalina insta
     - Help with testing framebuffer / iGPU settings, fix sound, touchpad, etc.
     - Test and report back!
 
+9. Current problems:
+    - Mojave and High Sierra fail to install due to the "disk is not convertible to apfs" error at initial instalation. Device hangs at 2 mins remaining.
+    - Catalina has the same error, however the installation is able to proceed after a hard reset. 
 
 
 
