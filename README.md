@@ -26,7 +26,7 @@ Here's what's working at the moment:
 | Sound              | Not Working          | Partially working with bluetooth                                  |
 | Keyboard backlight | Working (partially)  | 50% always on from latest MrChromebox firmware                    |
 | Touchscreen        | Working! :-)         | With VoodooI2C.kext and VoodooI2CHID.kext                         |
-| Mac OS 11 Big Sur  | Not tested           | Reports are now that intel wifi / itlwm work... Haven't tested.   |
+| Mac OS 11 Big Sur  | Working (partially)  | Possible to upgrade from Catalina to Big Sur. Same functionality. |
 
 
 ### Requirements
@@ -51,14 +51,14 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.15.7 Catalina insta
 
 1. Flash UEFI firmware. Read and follow [yusefnapora's excellent guide](https://github.com/yusefnapora/pixelbook-linux) on how to flash the UEFI firmware using MrChromebox's scripts. To do this, you will need to disable write protect with either the SuzyQable cable or by removing the battery. 
 2. Download and set up your Mac OS X Catalina USB drive. 
-3. Set up OpenCore on the EFI partition of the drive. [Read the OpenCore Install Guide.](https://dortania.github.io/) There are also plenty of video [tutorials](https://www.youtube.com/watch?v=jqg7MX3FS7M) on how to do this.
+3. Set up OpenCore on the EFI partition of the drive. [Read the OpenCore Install Guide.](https://dortania.github.io/) 
     - My EFI folder to use based on work completed so far (YMMV) is [here](https://www.dropbox.com/s/w1oh0do8k0b8d8o/EFI5.zip?dl=0).
 4. KEXTS: the following are suggestions, you can experiment with your own and report back!
     - For USB, follow Corpnewt's [USBMap](https://github.com/corpnewt/USBMap) procedure - this is instead of USBInjectAll, which is outdated.
     - AppleALC
     - IntelBluetoothFirmware
     - IntelBluetoothInjector
-    - itlwm - for wifi to work
+    - itlwm or AirportItlwm (use latest stable on Catalina, or alpha on Big Sur).
     - Lilu
     - SMCProcessor
     - VirtualSMC
@@ -69,16 +69,17 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.15.7 Catalina insta
 
 5. Edit your config.plist with the following customizations:
     - SetupVirtualMap = No , rather than YES, as per OpenCore guide
-    - Under DeviceProperties: AAPL,ig-platform-id    Data   01001E59 (this should be the right one, but we still have no graphics acceleration). 
+    - Under DeviceProperties: AAPL,ig-platform-id is 00001E59, device-id is 591E0000. (we still have no graphics acceleration). 
      - Under Kernel -> Quirks: AppleCpuPmCfgLock: True and AppleXcpmCfgLock: True
     
 6. Test your config.plist for errors: https://opencore.slowgeek.com/
 
 7. Boot the MacOS installer. Important: if you are using an external drive, you must format it as APFS or the installer won't be able to install.
-    - If the initial install screen freezes with 2 or 3 mins remaining, shut down and start up, but instead of selecting the install media, continue the installation from the target disk. It will then continue the installation and reboot.
+    - The initial install screen will freeze with 2 mins remaining due to an APFS error. Shut down and start up, but instead of selecting the install media, continue the installation from the target disk. 
 
 8. After install: 
-    - Download and use [heliport](https://openintelwireless.github.io/HeliPort) to connect to Wifi.
+    - If using itwlm, use [heliport](https://openintelwireless.github.io/HeliPort) to connect to Wifi.
+    - Help with testing framebuffer / iGPU settings, fix sound, touchpad, etc.
     - Test and report back!
 
 
