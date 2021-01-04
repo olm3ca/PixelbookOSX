@@ -79,7 +79,8 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.15.7 Catalina insta
 
 8. After install: 
     - If using itwlm, use [heliport](https://openintelwireless.github.io/HeliPort) to connect to Wifi.
-    - Help with testing framebuffer / iGPU settings, fix sound, touchpad, etc.
+    - The iGPU, Intel HD615, is not responding to framebuffer or other attempts to get acceleration working. Help with testing framebuffer / iGPU settings is needed.
+    - Still need to identify sound, touchpad, and power management solutions.
     - Test and report back!
 
 9. Current problems:
