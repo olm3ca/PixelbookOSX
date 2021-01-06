@@ -26,7 +26,7 @@ Here's what's working at the moment:
 | Sound              | Not Working          | Partially working with bluetooth                                  |
 | Keyboard backlight | Working (partially)  | 50% always on from latest MrChromebox firmware                    |
 | Touchscreen        | Working! :-)         | With VoodooI2C.kext and VoodooI2CHID.kext                         |
-| Mac OS 11 Big Sur  | Working (partially)  | Possible to upgrade from Catalina to Big Sur. Same functionality. |
+| Mac OS 11 Big Sur  | Boots                | Same as Catalina, has issues with the iGPU. Not recommended atm.  |
 
 
 ### Requirements
@@ -74,7 +74,7 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install
     
 6. Test your config.plist for errors: https://opencore.slowgeek.com/
 
-7. Setting up MacOS. This is currently a bit challenging for the non-512GB NVMe users. 
+7. Setting up MacOS. This is currently a bit challenging, hopefully a simpler method will be developed soon. 
     -  First, make a Catalina and Mojave installer. 
     -  Install Mojave first, but it will fail with 2 minutes remaining. Note: if you are using an external drive, you must format it as APFS or the installer won't be able to install.
     - Next, copy the files from the MacOS Install Data folder to your computer. 
