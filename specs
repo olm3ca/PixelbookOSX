@@ -26,7 +26,7 @@ Network:   Device-1: Intel Wireless 7265 driver: iwlwifi v: kernel port: efa0 bu
            IF: wlp1s0 state: up mac: <filter> 
 Drives:    Local Storage: total: 116.48 GiB used: 8.51 GiB (7.3%) 
            ID-1: /dev/mmcblk0 model: DURM4R size: 116.48 GiB serial: <filter> 
-Partition: ID-1: / size: 113.66 GiB used: 8.50 GiB (7.5%) fs: ext4 dev: /dev/mmcblk0p2 
+
 USB:       Hub: 1-0:1 info: Full speed (or root) Hub ports: 12 rev: 2.0 chip ID: 1d6b:0002 
            Device-1: 1-2:2 info: Realtek WebCamera type: Video driver: uvcvideo rev: 2.0 
            chip ID: 0bda:564b 
@@ -34,15 +34,18 @@ USB:       Hub: 1-0:1 info: Full speed (or root) Hub ports: 12 rev: 2.0 chip ID:
            Hub: 2-0:1 info: Full speed (or root) Hub ports: 6 rev: 3.0 chip ID: 1d6b:0003 
 Sensors:   System Temperatures: cpu: 62.0 C mobo: N/A 
            Fan Speeds (RPM): N/A 
-Repos:     No active apt repos in: /etc/apt/sources.list 
-           Active apt repos in: /etc/apt/sources.list.d/official-package-repositories.list 
-           1: deb http: //packages.linuxmint.com ulyana main upstream import backport #id:linuxmint_main
-           2: deb http: //archive.ubuntu.com/ubuntu focal main restricted universe multiverse
-           3: deb http: //archive.ubuntu.com/ubuntu focal-updates main restricted universe multiverse
-           4: deb http: //archive.ubuntu.com/ubuntu focal-backports main restricted universe multiverse
-           5: deb http: //security.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
-           6: deb http: //archive.canonical.com/ubuntu/ focal partner
-Info:      Processes: 204 Uptime: 42m Memory: 7.67 GiB used: 1.36 GiB (17.7%) Init: systemd v: 245 
-           runlevel: 5 Compilers: gcc: 8.4.0 alt: 8/9 Client: Unknown python3.8 client 
-           inxi: 3.0.38 
+
+Touchpad: 
+
+cros-ec-i2c i2c-GOOG0008:00: from Chrome OS
+
+My touchpad firmware version:
+
+RO version: rose_v1.1.6782-7f839aaa2
+RW version: rose_v1.1.8546-ee1861e9e
+Firmware copy: RW
+Build info: rose_v1.1.8546-ee1861e9e 2018-06-04 17:23:44 ***@sheckylin-z840.tpe.corp.google.com
+Chip vendor: stm Chip name: stm32f412 Chip revision:
+Board version: 2169
+
 [/code]
