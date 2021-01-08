@@ -10,7 +10,7 @@ For OS X purposes, what matters most in the [specs for the Pixelbook](https://su
 -  keyboard - PS/2
 -  touchpad: HID-over-I²C
 -  Suspend: ACPI S3 sleep
--  Audio: Audio Codec: Intel Sunrise Point-LP HD Audio. The speakers, mic and headphone jack are all connected to various codecs exposed via I²C. [yusefnapora explains in detail](https://github.com/yusefnapora/pixelbook-linux/blob/master/README.md#switching-audio-outputs--inputs) how complicated audio was in Ubuntu... But who knows, maybe we can figure it out.
+-  Audio: Audio Codec: uses unsupported codecs MAX98927 as speakers and RT5514 as dmic on ssp0 and RT5663 as headset on ssp1... Not currently working, but also not impossible. As a cheap and easy workaround, a [$10 USB sound adapter](https://www.amazon.com/Syba-external-Adapter-Windows-C-Media/dp/B001MSS6CS) or bluetooth audio work perfectly well. 
 
 ## Current Status
 
@@ -23,7 +23,7 @@ Here's what's working at the moment:
 | Suspend            | Not working          | Haven't started                                                   |
 | Touchpad           | Not Working          |                                                                   |
 | Graphics Accel.    | Working!             | On Mojave only, not Catalina or Big Sur.                          |
-| Sound              | Not Working          | Partially working with bluetooth                                  |
+| Sound              | Not Working          | Partially working with bluetooth / USB sound adapter              |
 | Keyboard backlight | Working (partially)  | 50% always on from latest MrChromebox firmware                    |
 | Touchscreen        | Working! :-)         | With VoodooI2C.kext and VoodooI2CHID.kext                         |
 | Mac OS 11 Big Sur  | Boots                | Same as Catalina, has issues with the iGPU. Not recommended atm.  |
