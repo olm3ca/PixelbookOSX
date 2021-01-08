@@ -74,15 +74,18 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install
     
 6. Test your config.plist for errors: https://opencore.slowgeek.com/
 
-7. Setting up MacOS. This is currently a bit challenging, hopefully a simpler method will be developed soon. 
-    -  First, make a Catalina and Mojave installer. 
-    -  Install Mojave first, but it will fail with 2 minutes remaining. Note: if you are using an external drive, you must format it as APFS or the installer won't be able to install.
-    - Next, copy the files from the MacOS Install Data folder to your computer. 
-    - Now run the Catalina installer. It will also fail at 2 minutes remaining, but it will leave behind an important next step in the opencore bootloader.
-    - Take the Catalina install target drive and copy the InstallESD.dmg file from the Mojave install over to the macOS Install Data folder, removing the one the Catalina installer made.
-    - Plug the install target back into the Pixelbook. At boot, select the install media again, but this time you will see "Mac OS Install" as a menu item. 
+7. Setting up MacOS. You'll need a working Mac for these steps, for now. 
+    -  First, download both Catalina and Mojave installers from Apple - [gibMacOS](https://github.com/corpnewt/gibMacOS) is a great tool for that. 
+    -  Run the BuildmacOSInstallApp tool within gibMacOS to create both of the installers.
+    -  Right-click on Catalina and Mojave installers, then go to Show Package Contents, Contents, SharedSupport.
+    -  Copy the InstallESD.dmg file from the Mojave install over to the Catalina installer in the same location, replacing it.
+    -  Create the new Catalina installer (with Mojave's InstallESD.dmg inside) with `sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume` replacing "MyVolume" with the name of your install media USB.
+    - When that has finished, you'll need to mount the EFI partition with the [MountEFI](https://github.com/corpnewt/MountEFI) utility and copy the contents of the latest EFI linked above into this partition.
+    - Boot the Catalina installer. Make sure to use DiskUtility during the initial install steps to format your target drive as APFS. The whole volume.
+    - The initial install will fail with 2 minutes remaining. Force power down and restart the Pixelbook.
+    - At boot, select the install media again, but this time you will see "Mac OS Install" as a menu item. 
     - The installation will continue for about 15 minutes. 
-    - At the end, it will fail with an error. Reboot.
+    - At the end, it may fail with an error. Reboot.
     - From opencore, select Recovery and let it boot. This may take 1-2 tries to fix the OS.
     - Once Recovery has done it's job, you'll be able to boot Mojave.
 
