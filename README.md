@@ -85,9 +85,10 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install
     - The initial install will fail with 2 minutes remaining. Force power down and restart the Pixelbook.
     - At boot, select the install media again, but this time you will see "Mac OS Install" as a menu item. 
     - The installation will continue for about 15 minutes. 
-    - At the end, it may fail with an error. Reboot.
-    - From opencore, select Recovery and let it boot. This may take 1-2 tries to fix the OS.
-    - Once Recovery has done it's job, you'll be able to boot Mojave.
+    - At the end, it may fail with an error. Power down the Pixelbook.
+    - Copy the EFI to your new Mojave drive using the same procedure from above 
+    - Boot again, this time in the opencore menu, select Recovery. Let it boot and go to Disk Utility. Run First Aid on the Mojave volume. Reboot.
+    - Reboot into Mojave and set it up! 
 
 8. After install: 
     - If using itwlm, use [heliport](https://openintelwireless.github.io/HeliPort) to connect to Wifi.
