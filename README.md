@@ -1,4 +1,4 @@
-# Installing Mac OS on the Google Pixelbook - now with working VRAM! 
+# Installing Mac OS Mojave on the Google Pixelbook 
 We've managed to install GNU/Linux, Windows and a lot of other hacks on this beautiful laptop... so why not Mac OS? 
 
 ## This is a work-in-progress guide.
@@ -21,7 +21,7 @@ Here's what's working at the moment:
 | WiFi               | Working              | Working                                                           |
 | Bluetooth          | Working              | Working                                                           |
 | Suspend            | Not working          | Haven't started                                                   |
-| Touchpad           | Not Working          |                                                                   |
+| Touchpad           | Working (partially)  | Install Karabiner 12.10.0 and go to Devices to enable ID 6353     |
 | Graphics Accel.    | Working!             | On Mojave only, not Catalina or Big Sur.                          |
 | Sound              | Not Working          | Partially working with bluetooth / USB sound adapter              |
 | Keyboard backlight | Working (partially)  | 50% always on from latest MrChromebox firmware                    |
