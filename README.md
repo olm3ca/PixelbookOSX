@@ -69,7 +69,7 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install
 
 5. Edit your config.plist with the following customizations:
     - SetupVirtualMap = No , rather than YES, as per OpenCore guide
-    - Under DeviceProperties: AAPL,ig-platform-id is 00001E59, device-id is 591E0000. See full list of requirements in EFI or in the included config.plist. 
+    - Under DeviceProperties: AAPL,ig-platform-id for the HD615 is 00001E59. See full list of requirements in EFI or in the included config.plist. 
      - Under Kernel -> Quirks: AppleCpuPmCfgLock: True and AppleXcpmCfgLock: True
     
 6. Test your config.plist for errors: https://opencore.slowgeek.com/
@@ -92,7 +92,7 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install
 
 8. After install: 
     - If using itwlm, use [heliport](https://openintelwireless.github.io/HeliPort) to connect to Wifi.
-    - Still need to identify sound, touchpad, and power management solutions.
+    - Still need to identify sound, sleep and power management solutions.
     - Test and report back!
 
 
