@@ -37,7 +37,8 @@ Sensors:   System Temperatures: cpu: 62.0 C mobo: N/A
 
 Touchpad: 
 
-In Windows: ACPI0C50 
+In Windows, Bios Device Name: SB.PCI0.1sC0.H00A OR SB.PCI0.1sC2.H049
+
 
 cros-ec-i2c i2c-GOOG0008:00: from Chrome OS
 
