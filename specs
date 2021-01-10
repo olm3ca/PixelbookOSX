@@ -37,14 +37,15 @@ Sensors:   System Temperatures: cpu: 62.0 C mobo: N/A
 
 Touchpad: 
 
+In Windows: ACPI0C50 
+
 cros-ec-i2c i2c-GOOG0008:00: from Chrome OS
 
-My touchpad firmware version:
+Google firmware version:
 
 RO version: rose_v1.1.6782-7f839aaa2
 RW version: rose_v1.1.8546-ee1861e9e
-Firmware copy: RW
-Build info: rose_v1.1.8546-ee1861e9e 2018-06-04 17:23:44 ***@sheckylin-z840.tpe.corp.google.com
+
 Chip vendor: stm Chip name: stm32f412 Chip revision:
 Board version: 2169
 
