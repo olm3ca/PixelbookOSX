@@ -49,6 +49,19 @@ software in this repo.
 
 Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install:
 
+# Easy version (Clover): 
+Note, this version uses Clover, which is not as well-received by the Hackintosh community anymore. Use this at your own peril:
+
+1. Download this [EFI](https://www.dropbox.com/s/phgwhyw6lde9omu/Clover%20EFI.zip?dl=0)
+2. Install Mac OS Mojave on your USB following the directions below.
+3. Use [MountEFI](https://github.com/corpnewt/MountEFI) to copy the contents of the EFI you just downloaded to this partition on the USB install media.
+4. Boot the install media - select Install Mojave and let it install to your external drive formatted as APFS (or, if you have the 512GB drive, to the internal drive)
+5. It will reboot - choose Mac OS Install from the Clover menu.
+6. Continue the install for 15 more minutes. Done.
+
+## More complicated version (Open Core):
+Note, this is actually the suggested install method albeit more complicated. If there is a way to make this simplier, it will be done soon... 
+
 1. Flash UEFI firmware. Read and follow [yusefnapora's excellent guide](https://github.com/yusefnapora/pixelbook-linux) on how to flash the UEFI firmware using MrChromebox's scripts. To do this, you will need to disable write protect with either the SuzyQable cable or by removing the battery. 
 2. Download and set up your Mac OS X Catalina and Mojave USB drives. 
 3. Set up OpenCore on the EFI partition of the drive. [Read the OpenCore Install Guide.](https://dortania.github.io/) 
