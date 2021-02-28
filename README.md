@@ -49,6 +49,17 @@ software in this repo.
 
 Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install:
 
+## Super easy version for external drive users (anyone without the 512GB model, using an existing Mac or hackintosh to help)
+If you have a Mac already, try this first as it's quite easy.
+
+1. Set up a Mac OS Mojave installer.
+2. Plug in your external drive to the Mac, and install Mac OS on the external drive (use APFS). 
+3. Once the install has completed the first stage (10-15 mins), it will reboot, make sure it continues to the second stage of setting up the OS (30 mins).
+4. When it reaches the Language Selection screen, reboot the Mac.
+5. Boot your Mac regularly and plug in the external drive. Use the steps from below to mount the EFI partition, and copy the contents of the EFI to it.
+6. Plug this drive into your Pixelbook and boot. It will take you right back to the language selection screen, where you can continue setting up the OS.
+7. That's it. Enjoy fulling working NVRAM, and no kernel panics at shutdown :-)
+
 ## Easy version (Clover): 
 Note, this version uses Clover, which is not as well-received by the Hackintosh community anymore. Use this at your own peril:
 
