@@ -1,5 +1,5 @@
 # Installing Mac OS Mojave on the Google Pixelbook 
-We've managed to install GNU/Linux, Windows and a lot of other hacks on this beautiful laptop... so why not Mac OS? 
+We've managed to install GNU/Linux, Windows and now... Mac OS! It turns out Mojave works quite well on this hardware. 
 
 ## This is a work-in-progress guide.
 Not all of the functionality is working. This will be updated frequently as fixes are identified. At the moment this guide is focused on Mac OS 10.14.6 Mojave as it has the best support for our hardware.
@@ -20,13 +20,12 @@ Here's what's working at the moment:
 |--------------------|----------------------|-------------------------------------------------------------------|
 | WiFi               | Working              | Working                                                           |
 | Bluetooth          | Working              | Working                                                           |
-| Suspend            | Not working          | Haven't started                                                   |
+| Suspend / Sleep    | Working              | Works, follow OC [guide fix here](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html#preparations)                                                   |
 | Touchpad           | Working (partially)  | Install [Karabiner 12.10.0](https://github.com/pqrs-org/Karabiner-Elements/releases/download/v12.10.0/Karabiner-Elements-12.10.0.dmg) and go to Devices to enable ID 6353     |
 | Graphics Accel.    | Working!             | On Mojave only, not Catalina or Big Sur.                          |
 | Sound              | Not Working          | Partially working with bluetooth / USB sound adapter              |
 | Keyboard backlight | Working (partially)  | 50% always on from latest MrChromebox firmware                    |
-| Touchscreen        | Working! :-)         | With VoodooI2C.kext and VoodooI2CHID.kext                         |
-| Mac OS 11 Big Sur  | Boots                | Same as Catalina, has issues with the iGPU. Not recommended atm.  |
+| Touchscreen        | Working              | With VoodooI2C.kext and VoodooI2CHID.kext                         |
 
 
 ### Requirements
@@ -49,75 +48,31 @@ software in this repo.
 
 Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install:
 
-## Super easy version for external drive users (anyone without the 512GB model, using an existing Mac or hackintosh to help)
-If you have a Mac already, try this first as it's quite easy.
-
-1. Set up a Mac OS Mojave installer.
-2. Plug in your external drive to the Mac, and install Mac OS on the external drive (use APFS). 
-3. Once the install has completed the first stage (10-15 mins), it will reboot, make sure it continues to the second stage of setting up the OS (30 mins).
-4. When it reaches the Language Selection screen, reboot the Mac.
-5. Boot your Mac regularly and plug in the external drive. Use the steps from below to mount the EFI partition, and copy the contents of the EFI to it.
-6. Plug this drive into your Pixelbook and boot. It will take you right back to the language selection screen, where you can continue setting up the OS.
-7. That's it. Enjoy fulling working NVRAM, and no kernel panics at shutdown :-)
-
-## Easy version (Clover): 
-Note, this version uses Clover, which is not as well-received by the Hackintosh community anymore. Use this at your own peril:
-
-1. Download this [EFI](https://www.dropbox.com/s/phgwhyw6lde9omu/Clover%20EFI.zip?dl=0)
-2. Install Mac OS Mojave on your USB following the directions below (use gibMacOS, then create the USB).
-3. Use [MountEFI](https://github.com/corpnewt/MountEFI) to copy the contents of the EFI you just downloaded to this partition on the USB install media.
-4. Boot the install media - select Install Mojave and let it install to your external drive formatted as APFS (or, if you have the 512GB drive, to the internal drive)
-5. It will reboot - choose Mac OS Install from the Clover menu.
-6. Continue the install for 15 more minutes. Done.
-
-## Better version (Open Core):
-Note, this is actually the suggested install method albeit more complicated. If there is a way to make this simplier, it will be done soon... 
+## Open Core:
+With the release of OC 0.6.6 we have a far simpler method of installing Mojave now. 
 
 1. Flash UEFI firmware. Read and follow [yusefnapora's excellent guide](https://github.com/yusefnapora/pixelbook-linux) on how to flash the UEFI firmware using MrChromebox's scripts. To do this, you will need to disable write protect with either the SuzyQable cable or by removing the battery. 
-2. Download and set up your Mac OS X Catalina and Mojave USB drives. 
-3. Set up OpenCore on the EFI partition of the drive. [Read the OpenCore Install Guide.](https://dortania.github.io/) 
-    - My EFI folder to use based on work completed so far (YMMV) is [here](https://www.dropbox.com/s/fbxfkh9t6ac8pav/EFI.zip?dl=0).
-4. KEXTS: the following are suggestions, you can experiment with your own and report back!
-    - For USB, follow Corpnewt's [USBMap](https://github.com/corpnewt/USBMap) procedure - this is instead of USBInjectAll, which is outdated.
-    - AppleALC
-    - IntelBluetoothFirmware
-    - IntelBluetoothInjector
-    - itlwm or AirportItlwm (use latest stable).
-    - Lilu
-    - SMCProcessor
-    - VirtualSMC
-    - VoodooI2C - touchscreen support
-    - VoodooI2CHID
-    - VoodooPS2Controller
-    - WhateverGreen
-
-5. Edit your config.plist with the following customizations:
-    - SetupVirtualMap = No , rather than YES, as per OpenCore guide
-    - Under DeviceProperties: AAPL,ig-platform-id for the HD615 is 00001E59. See full list of requirements in EFI or in the included config.plist. 
-     - Under Kernel -> Quirks: AppleCpuPmCfgLock: True and AppleXcpmCfgLock: True
-    
-6. Test your config.plist for errors: https://opencore.slowgeek.com/
-
-7. Setting up MacOS. You'll need a working Mac for these steps, for now. 
-    -  First, download both Catalina and Mojave installers from Apple - [gibMacOS](https://github.com/corpnewt/gibMacOS) is a great tool for that. 
-    -  Run the BuildmacOSInstallApp tool within gibMacOS to create both of the installers.
-    -  Right-click on Catalina and Mojave installers, then go to Show Package Contents, Contents, SharedSupport.
-    -  Copy the InstallESD.dmg file from the Mojave install over to the Catalina installer in the same location, replacing it.
-    -  Create the new Catalina installer (with Mojave's InstallESD.dmg inside) with `sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume` replacing "MyVolume" with the name of your install media USB.
-    - When that has finished, you'll need to mount the EFI partition with the [MountEFI](https://github.com/corpnewt/MountEFI) utility and copy the contents of the latest EFI linked above into this partition.
-    - Boot the Catalina installer. Make sure to use DiskUtility during the initial install steps to format your target drive as APFS. The whole volume.
-    - The initial install will fail with 2 minutes remaining. Force power down and restart the Pixelbook.
-    - At boot, select the install media again, but this time you will see "Mac OS Install" as a menu item. 
-    - The installation will continue for about 15 minutes. 
+2. Download and set up your Mac OS X Mojave USB install media. [gibMacOS](https://github.com/corpnewt/gibMacOS) is a great tool for that. 
+3. Download my EFI folder here
+4. When the Mojave install media is ready, mount the EFI partition with the [MountEFI](https://github.com/corpnewt/MountEFI) utility and copy the contents of the latest EFI linked above into this partition.
+5. Now, boot from the Mojave installer. Make sure to use DiskUtility during the initial install steps to format your target drive as APFS. The whole volume.
+    - If you have the 512GB model, you can use the internal drive. For everyone else, an external SSD is the way to go.
+    - After about 10 minutes or so, it will reboot. Go back into the boot menu and select your Mojave install media. In the opencore boot menu you should now see "Mac OS Install" as a menu item. Select that to continue the installation. 
+    - The second phase of the installation will continue for about 15-20 minutes. 
     - At the end, it may fail with an error. Power down the Pixelbook.
-    - Copy the EFI to your new Mojave drive using the same procedure from above 
-    - Boot again, this time in the opencore menu, select Recovery. Let it boot and go to Disk Utility. Run First Aid on the Mojave volume. Reboot.
-    - Reboot into Mojave and set it up! 
+6. Before you can boot from the new Mojave installation (on your 512GB internal drive or external SSD), you will need to copy the EFI to your new Mojave drive using the same procedure from step 4.  
 
 8. After install: 
-    - If using itwlm, use [heliport](https://openintelwireless.github.io/HeliPort) to connect to Wifi.
-    - Still need to identify sound, sleep and power management solutions.
-    - Test and report back!
+    - You may have an error setting up wifi in the initial setup process - continue without connecting to the internet and it will work once you're finished setting up everything. 
+    - To fix sleep, you may want to follow these steps from the OC [guide fix here](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html#preparations)
+    - Sound currently works via bluetooth or a USB sound adapter. 
+    - Karabiner (linked above, must be version 12.10.0 can make the touchpad functional, but not great. It's also helpful for remapping the keyboard to match what the Pixelbook F1-F10 keys do.
+
+9. Still being worked on: 
+    - Screen brightness
+    - Keyboard brightness
+    - Sound (who knows, maybe we can get it working)
+    - Upgrade to Catalina / Big Sur. This is problematic as we have never been able to get graphics acceleration working on either. With this same EFI it fails to boot. Using an invalid iGPU, it boots, but performance is horrible. 
 
 
 
