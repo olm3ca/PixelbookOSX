@@ -50,7 +50,7 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install
 
 1. Flash UEFI firmware. Read and follow [yusefnapora's excellent guide](https://github.com/yusefnapora/pixelbook-linux) on how to flash the UEFI firmware using MrChromebox's scripts. To do this, you will need to disable write protect with either the SuzyQable cable or by removing the battery. 
 2. Download and set up your Mac OS X Mojave USB install media. [gibMacOS](https://github.com/corpnewt/gibMacOS) is a great tool for that. 
-3. Download my EFI folder [here](https://www.dropbox.com/s/odh4bt5rh72d645/efi%20mojave%20pb.zip?dl=0)
+3. Download my **EFI folder** [here](https://www.dropbox.com/s/2h4ybwq4d262q6y/EFI%20Mojave%20PB.zip?dl=0)
 4. When the Mojave install media is ready, mount the EFI partition with the [MountEFI](https://github.com/corpnewt/MountEFI) utility and copy the contents of the latest EFI linked above into this partition.
 5. Now, boot from the Mojave installer. Make sure to use DiskUtility during the initial install steps to format your target drive as APFS. The whole volume.
     - If you have the 512GB model, you can use the internal drive. For everyone else, an external SSD is the way to go.
