@@ -46,10 +46,7 @@ software in this repo.
 
 ## Installation
 
-Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install:
-
-## Open Core:
-With the release of OC 0.6.6 we have a far simpler method of installing Mojave now. 
+Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install using Opencore 0.6.6:
 
 1. Flash UEFI firmware. Read and follow [yusefnapora's excellent guide](https://github.com/yusefnapora/pixelbook-linux) on how to flash the UEFI firmware using MrChromebox's scripts. To do this, you will need to disable write protect with either the SuzyQable cable or by removing the battery. 
 2. Download and set up your Mac OS X Mojave USB install media. [gibMacOS](https://github.com/corpnewt/gibMacOS) is a great tool for that. 
