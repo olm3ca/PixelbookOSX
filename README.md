@@ -54,14 +54,15 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install
 
 1. Flash UEFI firmware. Read and follow [yusefnapora's excellent guide](https://github.com/yusefnapora/pixelbook-linux) on how to flash the UEFI firmware using MrChromebox's scripts. To do this, you will need to disable write protect with either the SuzyQable cable or by removing the battery. 
 2. Download and set up your Mac OS X Mojave USB install media. [gibMacOS](https://github.com/corpnewt/gibMacOS) is a great tool for that. 
-3. Download my **EFI folder** [here](https://www.dropbox.com/s/2h4ybwq4d262q6y/EFI%20Mojave%20PB.zip?dl=0)
-4. When the Mojave install media is ready, mount the EFI partition with the [MountEFI](https://github.com/corpnewt/MountEFI) utility and copy the contents of the latest EFI linked above into this partition.
-5. Now, boot from the Mojave installer. Make sure to use DiskUtility during the initial install steps to format your target drive as APFS. The whole volume.
+  - Before you make the install USB, make sure it is formatted as Mac OS Extended (Journaled) with GUID Partition Map.
+4. Download my **EFI folder** [here](https://www.dropbox.com/s/2h4ybwq4d262q6y/EFI%20Mojave%20PB.zip?dl=0)
+5. When the Mojave install media is ready, mount the EFI partition with the [MountEFI](https://github.com/corpnewt/MountEFI) utility and copy the contents of the latest EFI linked above into this partition.
+6. Now, boot from the Mojave installer. Make sure to use DiskUtility during the initial install steps to format your target drive as APFS. The whole volume.
     - If you have the 512GB model, you can use the internal drive. For everyone else, an external SSD is the way to go.
     - After about 10 minutes or so, it will reboot. Go back into the boot menu and select your Mojave install media. In the opencore boot menu you should now see "Mac OS Install" as a menu item. Select that to continue the installation. 
     - The second phase of the installation will continue for about 15-20 minutes. 
     - At the end, it may fail with an error. Power down the Pixelbook.
-6. Before you can boot from the new Mojave installation (on your 512GB internal drive or external SSD), you will need to copy the EFI to your new Mojave drive using the same procedure from step 4.  
+7. Before you can boot from the new Mojave installation (on your 512GB internal drive or external SSD), you will need to copy the EFI to your new Mojave drive using the same procedure from step 4.  
 
 8. After install: 
     - You may have an error setting up wifi in the initial setup process - continue without connecting to the internet and it will work once you're finished setting up everything. 
