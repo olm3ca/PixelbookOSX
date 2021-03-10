@@ -73,7 +73,16 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install
     - Sound currently works via bluetooth or a USB sound adapter. 
     - Karabiner (linked above, must be version 12.10.0 can make the touchpad functional, but not great. It's also helpful for remapping the keyboard to match what the Pixelbook F1-F10 keys do.
 
-9. Still being worked on: 
+9. **Required final step**: Please note, this is important, otherwise you could end up with a locked Apple account. 
+    - Download [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) 
+    - Download [ProperTree](https://github.com/corpnewt/ProperTree)
+    - Mount your EFI on the Mojave build you have installed. 
+    - Run GenSMBIOS, and when it prompts you for the build type, ours is **MacBook10,1** 
+    - It will generate a serial number to be used on your machine. It will ask where your config.plist is located: in EFI / OC / there is a config.plist file.
+    - Exit GenSMBIOS and open your config.plist with ProperTree. Scroll down to NVRAM / PlatformInfo. Verify that your serial number has been updated. The one used in the EFI I am sharing ends with HH27. Yours must be different than this in order to set up iCloud / iMessage / Facetime / etc. 
+    - Final tip: our serial numbers on hackintosh builds should **not** pass validation on [Apple's Check Coverage site](https://checkcoverage.apple.com/). You will want to verify that before using your serial number.
+
+10. Still being worked on: 
     - Screen brightness
     - Keyboard brightness
     - Sound (who knows, maybe we can get it working)
