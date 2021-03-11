@@ -36,7 +36,7 @@ Here's what's working at the moment:
 
 Before you start, you'll need to have the following things to complete the process:
 
-- A [SuzyQable CCD Debugging cable][suzyqable], ~$15 USD + shipping
+- A [SuzyQable CCD Debugging cable](https://www.sparkfun.com/products/14746), ~$15 USD + shipping
 - A USB-A to USB-C adapter
 - 1 USB flash drives with USB-C connectors or adapters, preferably ~10GB or larger
 - A willingness to accept that this is a potentially destructive process that may render your
@@ -57,23 +57,24 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install
     - Before you make the install USB, make sure it is formatted as Mac OS Extended (Journaled) with GUID Partition Map.
     - To create the installer on a Mac in Terminal: `sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume` and replace MyVolume with the name of your target drive.
 
-4. Download my **EFI folder** [here](https://www.dropbox.com/s/2h4ybwq4d262q6y/EFI%20Mojave%20PB.zip?dl=0)
+3. Download my **EFI folder** [here](https://www.dropbox.com/s/2h4ybwq4d262q6y/EFI%20Mojave%20PB.zip?dl=0)
+    
+4. When the Mojave install media is ready, mount the EFI partition with the [MountEFI](https://github.com/corpnewt/MountEFI) utility and copy the contents of the latest EFI linked above into this partition.
     - Make sure to copy the entire contents of the EFI above, starting from the EFI folder itself. So inside the EFI partition it should start with EFI, followed by BOOT and OC folders, etc. For more information visit the OpenCore [guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/opencore-efi.html)
-6. When the Mojave install media is ready, mount the EFI partition with the [MountEFI](https://github.com/corpnewt/MountEFI) utility and copy the contents of the latest EFI linked above into this partition.
-7. Now, boot from the Mojave installer. In Disk Utility, go to Show All Devices in the top left, and then select the entire drive to format it as APFS.
+5. Now, boot from the Mojave installer. In Disk Utility, go to Show All Devices in the top left, and then select the entire drive to format it as APFS.
     - If you have the 512GB model, you can use the internal drive. For everyone else, an external SSD is the way to go.
     - After about 10 minutes or so, it will reboot. Go back into the boot menu and select your Mojave install media. In the opencore boot menu you should now see "Mac OS Install" as a menu item. Select that to continue the installation. 
     - The second phase of the installation will continue for about 15-20 minutes. 
     - At the end, it may fail with an error. Power down the Pixelbook.
-8. Before you can boot from the new Mojave installation (on your 512GB internal drive or external SSD), you will need to copy the EFI to your new Mojave drive using the same procedure from step 4.  
+6. Before you can boot from the new Mojave installation (on your 512GB internal drive or external SSD), you will need to copy the EFI to your new Mojave drive using the same procedure from step 4.  
 
-8. After install: 
+7. After install: 
     - You may have an error setting up wifi in the initial setup process - continue without connecting to the internet and it will work once you're finished setting up everything. 
     - To fix sleep, you may want to follow these steps from the OC [guide fix here](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html#preparations)
     - Sound currently works via bluetooth or a USB sound adapter. 
     - Karabiner (linked above, must be version 12.10.0 can make the touchpad functional, but not great. It's also helpful for remapping the keyboard to match what the Pixelbook F1-F10 keys do.
 
-9. **Required final step**: Please note, this is important, otherwise you could end up with a locked Apple account. 
+8. **Required final step**: Please note, this is important, otherwise you could end up with a locked Apple account. 
     - Download [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) 
     - Mount your EFI on the Mojave build you have installed. 
     - Run GenSMBIOS, follow the prompts in order. 
@@ -82,9 +83,9 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install
     - It will generate a serial number to be used on your machine. Yours must be different than the one used in the included EFI in order to set up iCloud / iMessage / Facetime / etc. 
     - Final tip: our serial numbers on hackintosh builds should **not** pass validation on [Apple's Check Coverage site](https://checkcoverage.apple.com/). You will want to verify that before using your serial number.
 
-10. Get to know [OpenCore's guide](https://dortania.github.io/OpenCore-Install-Guide/) on this hackintosh build, and download [ProperTree](https://github.com/corpnewt/ProperTree) to get familiar with our config.plist.
+9. Get to know [OpenCore's guide](https://dortania.github.io/OpenCore-Install-Guide/) on this hackintosh build, and download [ProperTree](https://github.com/corpnewt/ProperTree) to get familiar with our config.plist.
 
-11. Still being worked on: 
+10. Still being worked on: 
     - Screen brightness
     - Keyboard brightness
     - Sound (who knows, maybe we can get it working)
