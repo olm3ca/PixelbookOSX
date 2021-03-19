@@ -57,7 +57,7 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install
     - Before you make the install USB, make sure it is formatted as Mac OS Extended (Journaled) with GUID Partition Map.
     - To create the installer on a Mac in Terminal: `sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume` and replace MyVolume with the name of your target drive.
 
-3. Download my **EFI folder** [here](https://www.dropbox.com/s/2h4ybwq4d262q6y/EFI%20Mojave%20PB.zip?dl=0)
+3. Download the **EFI folder** zip from the Releases section of this repo. Unzip it. You will need the entire contents, starting from the EFI folder itself.
     
 4. When the Mojave install media is ready, mount the EFI partition with the [MountEFI](https://github.com/corpnewt/MountEFI) utility and copy the contents of the latest EFI linked above into this partition.
     - Make sure to copy the entire contents of the EFI above, starting from the EFI folder itself. So inside the EFI partition it should start with EFI, followed by BOOT and OC folders, etc. For more information visit the OpenCore [guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/opencore-efi.html)
@@ -69,12 +69,11 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install
 6. Before you can boot from the new Mojave installation (on your 512GB internal drive or external SSD), you will need to copy the EFI to your new Mojave drive using the same procedure from step 4.  
 
 7. After install: 
-    - You may have an error setting up wifi in the initial setup process - continue without connecting to the internet and it will work once you're finished setting up everything. 
     - To fix sleep, you may want to follow these steps from the OC [guide fix here](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html#preparations)
     - Sound currently works via bluetooth or a USB sound adapter. 
     - Karabiner (linked above, must be version 12.10.0 can make the touchpad functional, but not great. It's also helpful for remapping the keyboard to match what the Pixelbook F1-F10 keys do.
 
-8. **Required final step**: Please note, this is important, otherwise you could end up with a locked Apple account. 
+8. **Required final step 1**: This is important, as the EFI you downloaded does not include a serial number, which will prevent iMessage, Facetime and other Mac services from working.
     - Download [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) 
     - Mount your EFI on the Mojave build you have installed. 
     - Run GenSMBIOS, follow the prompts in order. 
@@ -83,13 +82,20 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install
     - It will generate a serial number to be used on your machine. Yours must be different than the one used in the included EFI in order to set up iCloud / iMessage / Facetime / etc. 
     - Final tip: our serial numbers on hackintosh builds should **not** pass validation on [Apple's Check Coverage site](https://checkcoverage.apple.com/). You will want to verify that before using your serial number.
 
-9. Get to know [OpenCore's guide](https://dortania.github.io/OpenCore-Install-Guide/) on this hackintosh build, and download [ProperTree](https://github.com/corpnewt/ProperTree) to get familiar with our config.plist.
+9. **Required final step 2** Download [ProperTree](https://github.com/corpnewt/ProperTree) and mount your EFI partition. Open the config.plist file.
+    - In ProperTree, change the "ROM" section in the PlatformInfo/Generic to the actual MAC address of your wifi card. 
 
-10. Still being worked on: 
+10. Read the [OpenCore guide](https://dortania.github.io/OpenCore-Install-Guide/) on how to this hackintosh build.
+
+11. Still being worked on: 
     - Screen brightness
     - Keyboard brightness
     - Sound (who knows, maybe we can get it working)
-    - Upgrade to Catalina / Big Sur. This is problematic as we have never been able to get graphics acceleration working on either. With this same EFI it fails to boot. Using an invalid iGPU, it boots, but performance is horrible. 
+    - Upgrade to Catalina / Big Sur. This is problematic as we have never been able to get graphics acceleration working on either. Want to try it? Follow these steps:
+    - Mount your EFI and edit your config.plist with ProperTree. Scroll down to Device Properties, PciRoot(0x0)/Pci(0x2,0x0) 
+    - Remove all child entries except AAPL,ig-platform-id
+    - Change AAPL,ig-platform-id to 01001659. 
+    - It boots, but performance is sluggish as VRAM is limited to 8mb.
 
 
 
