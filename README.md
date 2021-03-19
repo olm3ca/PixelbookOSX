@@ -24,11 +24,11 @@ Here's what's working at the moment:
 |--------------------|----------------------|-------------------------------------------------------------------|
 | WiFi               | Working              | Working                                                           |
 | Bluetooth          | Working              | Working                                                           |
-| Suspend / Sleep    | Working              | Works, follow OC [guide fix here](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html#preparations)                                                   |
+| Suspend / Sleep    | Working              | Working                                                           |
 | Touchpad           | Working (partially)  | Install [Karabiner 12.10.0](https://github.com/pqrs-org/Karabiner-Elements/releases/download/v12.10.0/Karabiner-Elements-12.10.0.dmg) and go to Devices to enable ID 6353     |
-| Graphics Accel.    | Working!             | On Mojave only, not Catalina or Big Sur.                          |
-| Sound              | Not Working          | Partially working with bluetooth / USB sound adapter              |
-| Keyboard backlight | Working (partially)  | 50% always on from latest MrChromebox firmware                    |
+| Graphics Accel.    | Working              | On Mojave only, not Catalina or Big Sur.                          |
+| Sound              | Not Working          | Only works with bluetooth / USB sound adapter                     |
+| Keyboard backlight | Not Working          |                                                                   |
 | Touchscreen        | Working              | With VoodooI2C.kext and VoodooI2CHID.kext                         |
 
 
@@ -90,8 +90,9 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install
 11. Still being worked on: 
     - Screen brightness
     - Keyboard brightness
-    - Sound (who knows, maybe we can get it working)
-    - Upgrade to Catalina / Big Sur. This is problematic as we have never been able to get graphics acceleration working on either. Want to try it? Follow these steps:
+    - Sound (The sound setup on this machine is quite complicated. Not impossible but help is needed...)
+    - Upgrade to Catalina / Big Sur. This is problematic as we have never been able to get graphics acceleration working on either. Want to try it? Upgrade or perform a clean install. With the Mojave EFI it will freeze at boot. To get to the GUI, follow these steps:
+ 
     - Mount your EFI and edit your config.plist with ProperTree. Scroll down to Device Properties, PciRoot(0x0)/Pci(0x2,0x0) 
     - Remove all child entries except AAPL,ig-platform-id
     - Change AAPL,ig-platform-id to 01001659. 
