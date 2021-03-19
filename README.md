@@ -85,7 +85,7 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install
 9. **Required final step 2** Download [ProperTree](https://github.com/corpnewt/ProperTree) and mount your EFI partition. Open the config.plist file.
     - In ProperTree, change the "ROM" section in the PlatformInfo/Generic to the actual MAC address of your wifi card. 
 
-10. Read the [OpenCore guide](https://dortania.github.io/OpenCore-Install-Guide/) on how to this hackintosh build.
+10. Read the [OpenCore guide](https://dortania.github.io/OpenCore-Install-Guide/) on how to improve this hackintosh build and contribute here.
 
 11. Still being worked on: 
     - Screen brightness
