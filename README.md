@@ -85,7 +85,7 @@ Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install
 9. **Required final step 2** Download [ProperTree](https://github.com/corpnewt/ProperTree) and mount your EFI partition. Open the config.plist file.
     - In ProperTree, change the "ROM" section in the PlatformInfo/Generic to the actual MAC address of your wifi card. 
 
-10. In the included EFI, USBInjectAll.kext is included. The purpose of this kext was to create mappings for any USB devices, however it is no longer maintained and should be replaced. For best results, you can:
+10. In the EFI on this repo, USBInjectAll.kext is included. The purpose of this kext was to create mappings for any USB devices, however it is no longer maintained and should be replaced. For best results, you can:
     - A) Use the USBMap.kext included in this repo OR, even better, 
     - B) Make your own especially if you have USB devices connected that are different than any standard USB C hub. Making your own USBMap.kext is really easy and is described in the OpenCore [guide here](https://dortania.github.io/OpenCore-Post-Install/usb/intel-mapping/intel.html)
 
