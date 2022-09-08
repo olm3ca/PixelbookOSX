@@ -32,7 +32,7 @@ For OS X purposes, what matters most in the [specs for the Pixelbook](https://su
 
 Before you start, you'll need to have the following things to complete the process:
 
-- A [SuzyQable CCD Debugging cable](https://www.sparkfun.com/products/14746), ~$15 USD + shipping
+- A SuzyQable CCD Debugging cable (or [make your own](https://www.reddit.com/r/chrultrabook/comments/uaiz1q/making_a_chromeos_suzy_q_cable_tutorial/)
 - A USB-A to USB-C adapter
 - 1 USB flash drives with USB-C connectors or adapters, preferably ~10GB or larger
 - A willingness to accept that this is a potentially destructive process that may render your
@@ -48,7 +48,7 @@ software in this repo.
 
 Here are the steps to go from stock Pixelbook to a Mac OS 10.14.6 Mojave install using Opencore:
 
-1. Flash UEFI firmware. Read and follow [MrChromebox's instructions](https://wiki.mrchromebox.tech) on how to flash the UEFI firmware using MrChromebox's scripts. To do this, you will need to disable write protect with either the SuzyQable cable or by removing the battery. 
+1. Flash UEFI firmware. Read and follow [MrChromebox's instructions](https://mrchromebox.tech) on how to flash the UEFI firmware using MrChromebox's scripts. To do this, you will need to disable write protect with either the SuzyQable cable or by removing the battery. 
 2. Download and set up your Mac OS X Mojave USB install media. [gibMacOS](https://github.com/corpnewt/gibMacOS) is a great tool for downloading it. 
     - Before you make the install USB, make sure it is formatted as Mac OS Extended (Journaled) with GUID Partition Map.
     - To create the installer on a Mac in Terminal: `sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume` and replace MyVolume with the name of your target drive.
