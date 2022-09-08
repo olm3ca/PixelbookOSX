@@ -6,7 +6,7 @@ It turns out Mojave works quite well on this hardware.
 |<img src="Pixelbook%20Opencore%20Boot.jpg" width="300">|<img src="Mojave.png" width="600">|
 
 ## A note on Pixelbook hardware
-For OS X purposes, what matters most in the [specs for the Pixelbook](https://support.google.com/pixelbook/answer/7504948?hl=en) is not so much about the i5-7Y57 or i7-7Y75 processor. The biggest difference for our purposes is the internal SSD. The 128GB and 256GB models have an EMMC SSD, and it is currently not working within OS X. The i7 with 512GB has an NVMe SSD, which is fully supported. So unless you have the 512GB hard drive, installing OS X to the internal drive is currently not possible. It does work on an external SSD, however. Other notable specs:
+For OS X purposes, what matters most in the [specs for the Pixelbook](https://support.google.com/pixelbook/answer/7504948?hl=en) is not so much about the i5-7Y57 or i7-7Y75 processor. The biggest difference for our purposes is the internal SSD. The 128GB and 256GB models have an EMMC SSD, which is not supported in OS X but you can boot to an external SSD. The i7 with 512GB has an NVMe SSD, which is fully supported. Other notable specs:
 -  Intel wifi chip: 7265
 -  keyboard - PS/2
 -  touchpad: HID-over-I²C
