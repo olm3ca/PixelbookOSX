@@ -32,7 +32,7 @@ For OS X purposes, what matters most in the [specs for the Pixelbook](https://su
 
 Before you start, you'll need to have the following things to complete the process:
 
-- A SuzyQable CCD Debugging cable (or [make your own](https://www.reddit.com/r/chrultrabook/comments/uaiz1q/making_a_chromeos_suzy_q_cable_tutorial/)
+- A SuzyQable CCD Debugging cable (or [make your own](https://www.reddit.com/r/chrultrabook/comments/uaiz1q/making_a_chromeos_suzy_q_cable_tutorial/))
 - A USB-A to USB-C adapter
 - 1 USB flash drives with USB-C connectors or adapters, preferably ~10GB or larger
 - A willingness to accept that this is a potentially destructive process that may render your
