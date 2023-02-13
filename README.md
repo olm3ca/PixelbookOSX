@@ -1,5 +1,5 @@
 # Installing macOS Monterey on the Google Pixelbook. 
-It turns out Mojave works quite well on this hardware. 
+It turns out macOS 12 works quite well on this hardware. 
 
 
 <img src="https://raw.githubusercontent.com/olm3ca/Pixel-Slate/main/NocturneMacOS.png" width="1920">
