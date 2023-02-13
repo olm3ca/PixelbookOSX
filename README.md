@@ -87,8 +87,8 @@ Here are the steps to go from stock Pixelbook to a macOS 12 install using OpenCo
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Misc.
-Read the [OpenCore guide](https://dortania.github.io/OpenCore-Install-Guide/) on how to improve this hackintosh build and contribute here.
-Despite what the Dortania guide says, use `MacBookAir8,1` for your SMBIOS.
+- Read the [OpenCore guide](https://dortania.github.io/OpenCore-Install-Guide/) on how to improve this hackintosh build and contribute here.
+- Despite what the Dortania guide says, use `MacBookAir8,1` for your SMBIOS.
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 ### macOS Ventura
 Before beginning, it's important to keep the following in mind:
