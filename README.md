@@ -88,7 +88,7 @@ Here are the steps to go from stock Pixelbook to a macOS 12 install using OpenCo
 ### Post install: 
    - To fix sleep, you may want to follow these steps from the OC [guide fix here](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html#preparations)
    - Sound currently works via Bluetooth or a USB sound adapter. 
-   - [Karabiner](https://karabiner-elements.pqrs.org, can make the touchpad functional, but not great. It's also helpful for remapping the keyboard to match what the Pixelbook F1-F10 keys do.
+   - [Karabiner](https://karabiner-elements.pqrs.org), can make the touchpad functional, but not great. It's also helpful for remapping the keyboard to match what the Pixelbook F1-F10 keys do.
 
 **Note:** In the EFI on this repo, USBMap.kext is included. The purpose of this kext was to create mappings for USB devices, however it was developed for the USB devices I use, and not yours. You should: 
     - Make your own USBMap.kext, by following the OpenCore [guide here](https://dortania.github.io/OpenCore-Post-Install/usb/intel-mapping/intel.html)
