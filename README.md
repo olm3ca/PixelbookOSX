@@ -8,7 +8,7 @@ It turns out macOS Monterey works quite well on this hardware.
 
 
 ## Some notable specs:
--  Intel Core i5-7Y57
+-  Intel Core i5 7Y57 / i7 
 -  Intel UHD 615
 -  Intel WiFi Chip: 7265
 -  Keyboard - PS/2
@@ -32,7 +32,6 @@ It turns out macOS Monterey works quite well on this hardware.
 | Keyboard backlight | Not Working          |                                                                                               |                                           
 | Keyboard Remaps    | Not Working          |                                                                                               |
 | eMMC Storage       | Working              | With `EmeraldSDHC.kext`.                                                                      |
-| SD Card Reader     | Not working          | Coming soon with `EmeraldSDHC.kext`.                                                          |
 | USB Ports          | Working              | Make sure to map your USB ports with `USBMap.kext`(macOS) or `USBToolbox.kext` (Windows/Linux).|
 | Webcam             | Not Working          |                                                                                                |
 | Internal Mic.      | Not working          | Same reason why internal speakers don't work; unsupported codec.                              |
@@ -93,8 +92,7 @@ Here are the steps to go from stock Pixelbook to a macOS 12 install using OpenCo
    - Sound currently works via Bluetooth or a USB sound adapter. 
    - [Karabiner](https://karabiner-elements.pqrs.org), can make the touchpad functional, but not great. It's also helpful for remapping the keyboard to match what the Pixelbook F1-F10 keys do.
 
-**Note:** In the EFI on this repo, USBMap.kext is included. The purpose of this kext was to create mappings for USB devices, however it was developed for the USB devices I use, and not yours. You should: 
-    - Make your own USBMap.kext, by following the OpenCore [guide here](https://dortania.github.io/OpenCore-Post-Install/usb/intel-mapping/intel.html)
+**Note:** Required for Monterey: Make your own USBMap.kext, by following the OpenCore [guide here](https://dortania.github.io/OpenCore-Post-Install/usb/intel-mapping/intel.html)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
