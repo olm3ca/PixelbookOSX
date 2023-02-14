@@ -35,7 +35,7 @@ It turns out macOS 12 works quite well on this hardware.
 | Internal Mic.      | Not working          | Same reason why internal speakers don't work; unsupported codec.                              |
 | Logout / Lock      | Working              | Working OOTB.                                                                                 |
 | Shutdown / Restart | Working              |                                                                                               |
-| Touchscreen        | Working              | With VoodooI2C.kext and VoodooI2CHID.kext                                                     |
+| Touchscreen        | Working              | With `VoodooI2C.kext` and `VoodooI2CHID.kext`                                                     |
 | Screen backlight   | Not Working          |                                                                                               |
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -48,7 +48,6 @@ Before you start, you'll need to have the following things to complete the proce
 - A USB-A to USB-C adapter
 - 1 USB flash drive with USB-C connectors or adapters for your OpenCore USB.
 - OpenCore version 0.8.8 or newer for proper boot device selection.
-- 
 - **A willingness to accept that this is a potentially destructive process that may render your
   expensive Pixelbook inoperable or otherwise busted. See the [disclaimer](#disclaimer) below.**
   
@@ -89,7 +88,7 @@ Here are the steps to go from stock Pixelbook to a macOS 12 install using OpenCo
 ### Post install: 
    - To fix sleep, you may want to follow these steps from the OC [guide fix here](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html#preparations)
    - Sound currently works via Bluetooth or a USB sound adapter. 
-   - Karabiner (linked above, can make the touchpad functional, but not great. It's also helpful for remapping the keyboard to match what the Pixelbook F1-F10 keys do.
+   - [Karabiner](https://karabiner-elements.pqrs.org, can make the touchpad functional, but not great. It's also helpful for remapping the keyboard to match what the Pixelbook F1-F10 keys do.
 
 **Note:** In the EFI on this repo, USBMap.kext is included. The purpose of this kext was to create mappings for USB devices, however it was developed for the USB devices I use, and not yours. You should: 
     - Make your own USBMap.kext, by following the OpenCore [guide here](https://dortania.github.io/OpenCore-Post-Install/usb/intel-mapping/intel.html)
