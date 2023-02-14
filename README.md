@@ -1,8 +1,11 @@
-# Installing macOS Monterey on the Google Pixelbook. 
-It turns out macOS 12 works quite well on this hardware. 
+# Installing macOS on the Google Pixelbook. 
+It turns out macOS Monterey works quite well on this hardware. 
 
 
-<img src="https://raw.githubusercontent.com/olm3ca/Pixel-Slate/main/NocturneMacOS.png" width="1920">
+| OpenCore Boot Menu | macOS Monterey |
+|------------|-------------|
+|<img src="https://github.com/olm3ca/PixelbookOSX/blob/36792715a2478665c79cab32f55d72ac2526062a/Pixelbook%20Opencore%20Boot.jpg?raw=true" width="300">|<img src="https://raw.githubusercontent.com/olm3ca/Pixel-Slate/main/NocturneMacOS.png" width="600">|
+
 
 ## Some notable specs:
 -  Intel Core i5-7Y57
