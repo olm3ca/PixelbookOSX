@@ -3,7 +3,7 @@ It turns out macOS Monterey works quite well on this hardware.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 ### ⚠️ READ ME!!
-This guide only applies to Pixelbook models with an eMMC drive. Pixelbook variants with an SSD for storage are currently not supported due to weird `TRIM` with their Samsung SSDs. Do not expect support here if you are proceeding with SSD variant of the Pixelbook. It will refuse to install. Your only way of installing is via external disks. 
+This guide only applies to Pixelbook models with an eMMC drive. Pixelbook variants with an SSD for storage are currently not supported due to weird `TRIM` with their Samsung drives. Do not expect support here if you are proceeding with SSD variant of the Pixelbook. It will refuse to install. Your only way of installing is via external disks. 
 
 If you have an Pixelbook with eMMC, you may proceed without any issue.
 
