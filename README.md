@@ -46,7 +46,7 @@ If you have an Pixelbook with eMMC, you may proceed without any issue.
 | Logout / Lock      | Working              | Working OOTB.                                                                                 |
 | Shutdown / Restart | Working              |                                                                                               |
 | Touchscreen        | Working              | With `VoodooI2C.kext` and `VoodooI2CHID.kext`                                                     |
-| Screen backlight   | Not Working          |                                                                                               |
+| Screen backlight   | Not Working          | Some users report BetterDisplay helps as a stopgap solution.                                  |
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
