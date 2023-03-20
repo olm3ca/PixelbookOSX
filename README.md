@@ -53,10 +53,10 @@ If you have an Pixelbook with eMMC, you may proceed without any issue.
 | Graphics Accel.    | Working              | With `-igfxnotelemetryload` in the `boot-args`.                                               |
 | Internal Speakers  | Not working          | Unsupported codec.                                                                            |
 | Keyboard backlight | Not Working          |                                                                                               |           
-| Keyboard Remaps    | Not Working          |                                                                                               |
+| Keyboard Remaps    | Working partially    | Install [Karabiner](https://karabiner-elements.pqrs.org) and use that to remap top row keys.  |
 | eMMC Storage       | Working              | With `EmeraldSDHC.kext`.                                                                      |
-| USB Ports          | Working              | Make sure to map your USB ports with `USBMap.kext`(macOS) or `USBToolbox.kext` (Windows/Linux).|
-| Webcam             | Not Working          |                                                                                                |
+| USB Ports          | Working              | Working OOTB, still advised to map USB ports.                                                 |
+| Webcam             | Not Working          |                                                                                               |
 | Internal Mic.      | Not working          | Same reason why internal speakers don't work; unsupported codec.                              |
 | Logout / Lock      | Working              | Working OOTB.                                                                                 |
 | Shutdown / Restart | Working              |                                                                                               |
