@@ -38,7 +38,8 @@ If you have an Pixelbook with eMMC, you may proceed without any issue.
 -  Keyboard - PS/2
 -  Touchpad: HID-over-I²C
 -  Suspend: ACPI S3 sleep
--  Audio Codec: Uses unsupported codec `max98927` as speakers and `RT5514` as DMIC on SSP0 and RT5663 as headset on SSP1. Not currently working, and may never work. As a cheap and easy workaround, a [$10 USB sound adapter](https://www.amazon.com/Syba-external-Adapter-Windows-C-Media/dp/B001MSS6CS) or Bluetooth audio work perfectly well. 
+-  Audio Codec: `max98927` as speakers, `RT5514` as DMIC on SSP0, and `RT5663` as headset on SSP1. 
+   - Note: **Audio / Mic are currently not working, and may never work.** As a cheap and easy workaround, a [$10 USB sound adapter](https://www.amazon.com/Syba-external-Adapter-Windows-C-Media/dp/B001MSS6CS) or Bluetooth audio work perfectly well. Or you can write audio drivers for us. ;)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -62,6 +63,7 @@ If you have an Pixelbook with eMMC, you may proceed without any issue.
 | Shutdown / Restart | Working              |                                                                                               |
 | Touchscreen        | Working              | With `VoodooI2C.kext` and `VoodooI2CHID.kext`                                                 |
 | Screen backlight   | Working partially    | Using BetterDisplay helps as a stopgap solution.                                              |
+| Continuity         | Not working          | Will likely never work, limitation with Intel Wi-Fi and itlwm.                                |
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -77,12 +79,11 @@ If you have an Pixelbook with eMMC, you may proceed without any issue.
 
 Before you start, you'll need to have the following things to complete the process:
 
+- **A willingness to accept that this is a potentially destructive process that may render your expensive Pixelbook inoperable or otherwise busted. Refer to the above [disclaimer](#disclaimer).**
 - A SuzyQable CCD Debugging cable (or [make your own](https://www.reddit.com/r/chrultrabook/comments/uaiz1q/making_a_chromeos_suzy_q_cable_tutorial/)) if you haven't disabled write protect already.
 - A USB-A to USB-C adapter
 - 1 USB flash drive with USB-C connectors or adapters for your OpenCore USB.
 - OpenCore version 0.8.8 or newer for proper boot device selection.
-- **A willingness to accept that this is a potentially destructive process that may render your
-  expensive Pixelbook inoperable or otherwise busted. See the [disclaimer](#disclaimer) below.**
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -146,8 +147,8 @@ Here are the steps to go from stock Pixelbook to a macOS 12 install using OpenCo
 - `AppleXcpmCfgLock` and `DisableIOMapper` can be enabled or disabled. Makes no difference.
 - It's worth noting that while it's recommended, coreboot already includes mapped USB ports, meaning that USB mapping is not required. Proceed at your  own risk if you decide to skip USB mapping.
 - Make sure your `ScanPolicy` is set to `0`. eMMC will not be recognized if it's some other value.
-- Please report any broken links in issues. Half this guide was written while I was high. /s
-- **USB ports will ONLY work with SSDT-USB-Reset** 
+- You are unable to swap wireless chips for Continuity features because the wireless chip is soldered onto the motherboard. 
+
 #### *Note: The hotkey to show drives **DOES NOT WORK**. Make a copy of your EFI with `ShowPicker` enabled if you need to boot from another drive.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
