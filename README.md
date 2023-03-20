@@ -20,7 +20,7 @@ If you have an Pixelbook with eMMC, you may proceed without any issue.
 - [Misc. Information](#misc)
 - [macOS Ventura](#macos-ventura) 
   - [Preparations](#preparations)
-  - [Installing Ventura directly](#preparations-for-installing-ventura-directly)
+  - [Installing Ventura Directly](#preparations-for-installing-ventura-directly)
   - [Fixing WiFi](#fixing-wifi-on-ventura)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
