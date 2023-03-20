@@ -135,12 +135,12 @@ Here are the steps to go from stock Pixelbook to a macOS 12 install using OpenCo
 
 ### Misc.
 - Read the [OpenCore guide](https://dortania.github.io/OpenCore-Install-Guide/) on how to improve this hackintosh build and contribute here.
-- *When formatting the eMMC drive in Disk Utility, make sure to toggle "Show all Drives" and **erase the WHOLE drive**, not just the current partition.
+- When formatting the eMMC drive in Disk Utility, make sure to toggle "Show all Drives" and **erase the WHOLE drive**, not just the current partition.
 - Format the drive as `APFS`
 - Map your USB ports prior to installing macOS for a painless install. You **will** reget it if you don't. You can use [USBToolBox](https://github.com/USBToolBox/tool) to do that. If you are using USBToolBox (Mainly Windows users), you need a second kext that goes along with it. [Github repo here](https://github.com/USBToolBox/kext). USBToolBox will not work without this kext. 
 - `itlwm` is more stable & faster than `AirportItlwm`
 - You might have DRM issues, there's no fix for this. :(
-- To fix the battery life on Ventura, you can set Low Battery Mode to be always enabled on battery. It's not perfect, but it helps. You can also use CPUFriend to tweak power settings but it might break sleep.
+- To fix the battery life on Ventura, you can set Low Battery Mode to be always enabled on battery. It's not perfect, but it helps. You can also use CPUFriend to tweak power settings but it might cause your system to die on boot. Please test on external USB disk first.
 - eMMC will come up as an external drive in the boot picker since eMMC is just an embedded SD card. Nothing you can do about it.
 - To hide the drive picker, set `ShowPicker` to `False` in `Misc` ->` Boot` -> `ShowPicker`
 - `AppleXcpmCfgLock` and `DisableIOMapper` can be enabled or disabled. Makes no difference.
