@@ -13,7 +13,7 @@ If you have an Pixelbook with eMMC, you may proceed without any issue.
 
 - [Specs](#some-notable-specs)
 - [Current Status](#current-status)
-- [⚠️ Mandatory Disclaimer](#%EF%B8%8F-mandatory-disclaimer)
+- [Mandatory Disclaimer](#%EF%B8%8F-mandatory-disclaimer)
 - [Requirements](#requirements)
 - [**Installation**](#installation)
 - [Post Install:](#post-install)
