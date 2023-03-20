@@ -16,7 +16,7 @@ If you have an Pixelbook with eMMC, you may proceed without any issue.
 - [Mandatory Disclaimer](#%EF%B8%8F-mandatory-disclaimer)
 - [Requirements](#requirements)
 - [**Installation**](#installation)
-- [Post Install:](#post-install)
+- [Post Install](#post-install)
 - [Misc. Information](#misc)
 - [macOS Ventura](#macos-ventura) 
   - [Preparations](#preparations)
