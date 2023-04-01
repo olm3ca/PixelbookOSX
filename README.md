@@ -96,31 +96,42 @@ Here are the steps to go from stock Pixelbook to a macOS 12 install using OpenCo
 2. Setup your EFI folder using the [OpenCore Guide](https://dortania.github.io/OpenCore-Install-Guide/). Use [Laptop Kaby Lake & Amber Lake Y](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/kaby-lake.html#starting-point) for your `config.plist`. 
 
 3. Re-visit this guide when you're done setting up your EFI. There are a few things we need to tweak to ensure our Pixelbook works with macOS. Skipping these steps will result in a **very** broken hack.
- 
-3. In your `config.plist`, under `NVRAM -> Add -> 7C436110-AB2A-4BBB-A880-FE41995C9F82`, add `-igfxnotelemetryload` to your `boot-args`. **Without it, you will NOT have iGPU acceleration**. translation: it will run horribly. 
 
-4.  Under `DeviceProperties -> Add -> PciRoot(0x0)/Pci(0x2,0x0)`, make the following modifications:
- 
-     | AAPL,ig-platform-id  | data | 0000C087 |
-     | -------------------- | ---- | -------- |
-     | device-id            | data | C0870000 |
+4. In your `config.plist`, under `Booter -> Quirks` set `ProtectMemoryRegions` to `TRUE`. It should look something like this in your `config.plist` when done correctly:
+
+   | Quirk                | Type | Value    |
+   | -------------------- | ---- | -------- |
+   | ProtectMemoryRegions | Boolean | True  |
    
-     _**These should be the only two items `in PciRoot(0x0)/Pci(0x2,0x0)`.**_
+   > **Warning** **This must be enabled.** 
 
-6. **Set your SMBIOS as MacBookAir8,1**. Ignore what the guide tells you to use, `MacBookAir8,1` works better with our laptop.
-   - If you choose to use `MacBook10,1` which also works, you will NOT have Low Battery Mode.
+5. In your `config.plist`, under `NVRAM -> Add -> 7C436110-AB2A-4BBB-A880-FE41995C9F82`, add `-igfxnotelemetryload` to your `boot-args`. **Without it, you will NOT have iGPU acceleration**. translation: it will run horribly. 
 
-7. Download [EmeraldSDHC](https://github.com/acidanthera/EmeraldSDHC/releases) for eMMC storage support. Put it in your Kexts folder. 
+6.  Under `DeviceProperties -> Add -> PciRoot(0x0)/Pci(0x2,0x0)`, make the following modifications:
+ 
+     |          Key                 | Type |   Value  |
+     | -----------------------------| -----| -------- |
+     | AAPL,ig-platform-id          | data | 0000C087 |
+     | device-id                    | data | C0870000 |
+     | enable-dpcd-max-link-rate-fix| data | 01000000 |
+     | dpcd-max-link-rate           | data | 1E000000 |
+   
+ > **Warning** **These should be the only two items `in PciRoot(0x0)/Pci(0x2,0x0)`.**
 
-8. Download corpnewt's SSDTTime, open it, select the first option `FixHPET`, choose `C` for default, and drag the SSDT it makes (`SSDT-HPET.aml`) into your `ACPI` folder. Then, in the same folder, copy the patches from `oc_patches.plist` into your config.plist under `ACPI -> Patch`. Without it, eMMC won't be recognized by macOS.
+7. **Set your SMBIOS as MacBookAir8,1**. Ignore what the guide tells you to use, `MacBookAir8,1` works better with our laptop.
+   > **Note** If you choose to use `MacBook10,1`, which also works, you will not have Low Battery Mode.
 
-9. Snapshot (cmd +r) or (ctrl + r) your `config.plist`. 
+8. Download [EmeraldSDHC](https://github.com/acidanthera/EmeraldSDHC/releases) for eMMC storage support. Put it in your Kexts folder. 
 
-10. Now, boot from the OpenCore USB. In Disk Utility, go to Show All Devices in the top left, and then select the entire drive to format it as APFS. Begin the install after.
+9. Download corpnewt's SSDTTime, open it, select the first option `FixHPET`, choose `C` for default, and drag the SSDT it makes (`SSDT-HPET.aml`) into your `ACPI` folder. Then, in the same folder, copy the patches from `oc_patches.plist` into your config.plist under `ACPI -> Patch`. Without it, eMMC won't be recognized by macOS.
+
+10. Snapshot (cmd +r) or (ctrl + r) your `config.plist`. 
+
+11. Now, boot from the OpenCore USB. In Disk Utility, go to Show All Devices in the top left, and then select the entire drive to format it as APFS. Begin the install after.
       - After some while, it will reboot. Go back into the boot menu and select your macOS Monterey install . In the OpeCore boot menu, you should now see "Install macOS Monterey" as a menu item. Select that to continue the installation. 
     - The second phase of the installation will continue for about ~25-30 minutes. If it appears to be stuck, **do NOT** shut it down. It is not stuck. It just takes a while.
 
-11. After installing, make sure to copy your EFI from the USB Drive over to your EFI Partition in your eMMC drive. corpnewt's MountEFI is great for doing this.   
+12. After installing, make sure to copy your EFI from the USB Drive over to your EFI Partition in your eMMC drive. corpnewt's MountEFI is great for doing this.   
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -130,7 +141,8 @@ Here are the steps to go from stock Pixelbook to a macOS 12 install using OpenCo
    - Sound currently works via Bluetooth or a USB sound adapter. 
    - [Karabiner](https://karabiner-elements.pqrs.org), can make the touchpad functional, but not great. It's also helpful for remapping the keyboard to match what the Pixelbook F1-F10 keys do.
 
-**Note:** Required for Monterey: Make your own `USBMap.kext`, by following the OpenCore [guide here](https://dortania.github.io/OpenCore-Post-Install/usb/intel-mapping/intel.html)
+**Note:** Required for macOS 12 and up: Make your own USB map, by following the [documentation](https://github.com/USBToolBox/tool#usage).
+> **Warning** You NEED to have USBToolBox.kext in your kext folder for the generated UTBMap.kext to work.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -155,10 +167,11 @@ Here are the steps to go from stock Pixelbook to a macOS 12 install using OpenCo
 
 ## macOS Ventura
 Before beginning, it's important to keep the following in mind:
+ > **Warning** Untested. Proceed at your own risk.
 
 - Your battery life will decrease more quickly while using Ventura. To prevent this, it is recommended to stick with Monterey or an earlier version.
 - AirportItlwm's Ventura variant does not play with our WiFi card, so you need to be using itlwm at all times.
-With that, let's get started!
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -182,7 +195,7 @@ Note: For Windows only, not sure how it's like on Linux.
 4. Open ProperTree, navigate to where your `Info.plist` is, and open it.
 5. Under `IOKitPersonalities -> itlwm -> WiFiConfig`, enter your WiFI details. Save and close when done.
 7. Launch ProperTree and reload (`ctrl+r`) your `config.plist`. 
-8. Boot recovery. There will be no WiFi logo/symbol, but you will have WiFi. If you are able to install macOS, then you have not fucked up.
+8. Boot recovery. There will be no WiFi logo/symbol, but you will have WiFi. If you are able to install macOS, then you have not messed up.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
