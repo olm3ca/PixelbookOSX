@@ -141,7 +141,8 @@ Here are the steps to go from stock Pixelbook to a macOS 12 install using OpenCo
    - Sound currently works via Bluetooth or a USB sound adapter. 
    - [Karabiner](https://karabiner-elements.pqrs.org), can make the touchpad functional, but not great. It's also helpful for remapping the keyboard to match what the Pixelbook F1-F10 keys do.
 
-**Note:** Required for Monterey: Make your own `USBMap.kext`, by following the OpenCore [guide here](https://dortania.github.io/OpenCore-Post-Install/usb/intel-mapping/intel.html)
+**Note:** Required for macOS 12 and up: Make your own USB map, by following the [documentation](https://github.com/USBToolBox/tool#usage).
+> **Warning** You NEED to have USBToolBox.kext in your kext folder for the generated UTBMap.kext to work.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
