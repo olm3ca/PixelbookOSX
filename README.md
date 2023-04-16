@@ -2,7 +2,7 @@
 It turns out that the latest verion(s) of macOS work quite well on the Google Pixelbook. 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
-### ⚠️ READ ME!!
+### Before you begin, 
 Pixelbook owners with an Samsung 512GB NVMe SSD should be aware that problems **will** arise during the installation process. This is primarily due to the fact that the Samsung SSD does not play well with macOS, which could result in degraded performance and prolonged boot times.
 
 If you have an Pixelbook with eMMC, you may proceed without any issue.
@@ -25,15 +25,18 @@ If you have an Pixelbook with eMMC, you may proceed without any issue.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-| OpenCore Boot Menu | macOS Monterey |
+
+
+| OpenCore Boot Menu | macOS Ventura |
 |------------|-------------|
-|<img src="https://github.com/olm3ca/PixelbookOSX/blob/36792715a2478665c79cab32f55d72ac2526062a/Pixelbook%20Opencore%20Boot.jpg?raw=true" width="300">|<img src="https://raw.githubusercontent.com/olm3ca/Pixel-Slate/main/NocturneMacOS.png" width="600">|
+|<img src="https://github.com/olm3ca/PixelbookOSX/blob/36792715a2478665c79cab32f55d72ac2526062a/Pixelbook%20Opencore%20Boot.jpg?raw=true" width="300">| <img src="https://raw.githubusercontent.com/olm3ca/Pixel-Slate/main/Ventura.png" width="300">|
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Some notable specs:
 -  Intel Core i5 7Y57 / i7 
--  Intel UHD 615
+-  Intel HD 615
 -  Intel WiFi Chip: 7265
 -  Keyboard - PS/2
 -  Touchpad: HID-over-I²C
@@ -89,7 +92,7 @@ Before you start, you'll need to have the following things to complete the proce
 
 ## Installation
 
-Here are the steps to go from stock Pixelbook to a macOS 12 install using OpenCore:
+Here are the steps to go from stock Pixelbook to a macOS install using OpenCore:
 
 1. If you haven't already, flash UEFI firmware. Read and follow [MrChromebox's instructions](https://mrchromebox.tech) on how to flash the UEFI firmware using MrChromebox's scripts. To do this, you will need to disable write protect with either the SuzyQable cable or by removing the battery. 
 
@@ -116,7 +119,7 @@ Here are the steps to go from stock Pixelbook to a macOS 12 install using OpenCo
      | enable-dpcd-max-link-rate-fix| data | 01000000 |
      | dpcd-max-link-rate           | data | 1E000000 |
    
- > **Warning** **These should be the only two items `in PciRoot(0x0)/Pci(0x2,0x0)`.**
+ > **Warning** **These should be the only items `in PciRoot(0x0)/Pci(0x2,0x0)`.**
 
 7. **Set your SMBIOS as MacBookAir8,1**. Ignore what the guide tells you to use, `MacBookAir8,1` works better with our laptop.
    > **Note** If you choose to use `MacBook10,1`, which also works, you will not have Low Battery Mode.
@@ -167,10 +170,9 @@ Here are the steps to go from stock Pixelbook to a macOS 12 install using OpenCo
 
 ## macOS Ventura
 Before beginning, it's important to keep the following in mind:
- > **Warning** Untested. Proceed at your own risk.
 
 - Your battery life will decrease more quickly while using Ventura. To prevent this, it is recommended to stick with Monterey or an earlier version.
-- AirportItlwm's Ventura variant does not play with our WiFi card, so you need to be using itlwm at all times.
+- AirportItlwm's Ventura variant does not work well with our wireless chip, use itlwm to avoid issues.
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
