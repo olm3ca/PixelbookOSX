@@ -96,6 +96,11 @@ Here are the steps to go from stock Pixelbook to a macOS install using OpenCore:
 
 1. If you haven't already, flash UEFI firmware. Read and follow [MrChromebox's instructions](https://mrchromebox.tech) on how to flash the UEFI firmware using MrChromebox's scripts. To do this, you will need to disable write protect with either the SuzyQable cable or by removing the battery. 
 
+### Fixing coreboot 4.2.0
+coreboot 4.2.0 (5/15/2023 release) has a known issue where macOS will hang on due to coreboot not defining CPU cores by default. To fix this, we'll use a SSDT to manually define them. Credits to [ExtremeXT](https://github.com/ExtremeXT) for the fix. You do not need this SSDT if you're on 4.1.9 or older.
+
+- Add [SSDT-PLUG-ALT.aml](https://github.com/meghan06/croscorebootpatch) to your ACPI folder and snapshot your `config.plist`.
+
 2. Setup your EFI folder using the [OpenCore Guide](https://dortania.github.io/OpenCore-Install-Guide/). Use [Laptop Kaby Lake & Amber Lake Y](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/kaby-lake.html#starting-point) for your `config.plist`. 
 
 3. Re-visit this guide when you're done setting up your EFI. There are a few things we need to tweak to ensure our Pixelbook works with macOS. Skipping these steps will result in a **very** broken hack.
